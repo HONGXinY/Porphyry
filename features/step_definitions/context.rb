@@ -17,6 +17,10 @@ Soit("{string} une des rubriques développées") do |topic|
   find_button(topic).sibling('.oi').click
 end
 
+Soit("la rubrique {string} choisi") do |topic|
+  click_on topic
+end
+
 Soit("{string} un des items affichés") do |itemName|
   expect(page).to have_content itemName
 end
@@ -51,4 +55,8 @@ end
 
 Soit("un item en cours de création") do
   visit '/item/Vitraux - Bénel/' + getUUID('')
+end
+
+Soit("le sélecteur {string} développé") do |attribut|
+  find_button(attribut).sibling('.oi').click
 end
